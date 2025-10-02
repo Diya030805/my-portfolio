@@ -1,6 +1,6 @@
 {
   "name": "my-protfolio",
-"homepage": "https://Diya030805.github.io/my-protfolio/",
+  "homepage": "https://Diya030805.github.io/my-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,7 @@
     "preview": "vite preview",
     "tailwind:init": "tailwindcss init -p",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d dist"
-
-
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-toast": "^1.2.15",
