@@ -11,6 +11,8 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { useState } from "react";
+import { Github,  } from "lucide-react";
+
 export default function ContactSection() {
 
 
@@ -95,18 +97,31 @@ const { toast } = useToast();
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank">
-                  <Instagram />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitch />
-                </a>
+                   <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+                
+                 <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+              >
+                <Instagram className="h-6 w-6" />
+              </a>
+                   <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+              >
+                <Github className="h-6 w-6" />
+              </a>
               </div>
             </div>
           </div>
