@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Instagram,
   Linkedin,
@@ -5,33 +6,34 @@ import {
   MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
+  Github,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useToast } from "../hooks/use-toast";
-import { useState } from "react";
-import { Github,  } from "lucide-react";
+import { cn } from "../lib/utils";
 
 export default function ContactSection() {
+  const [result, setResult] = useState("");
 
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
+    formData.append("access_key", "c1cab04e-2b52-4e4e-829f-0bab4a545043");
 
-const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const data = await response.json();
 
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -98,7 +100,7 @@ const { toast } = useToast();
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
                    <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/diya-ghosh030508" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
@@ -107,7 +109,7 @@ const { toast } = useToast();
               </a>
                 
                  <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/diyaghosh0305?igsh=MXQxOXN0aXdrbWF0MA==&utm_source=ig_contact_invite " 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
@@ -115,7 +117,7 @@ const { toast } = useToast();
                 <Instagram className="h-6 w-6" />
               </a>
                    <a 
-                href="https://github.com" 
+                href="https://github.com/Diya030805" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
@@ -126,78 +128,75 @@ const { toast } = useToast();
             </div>
           </div>
 
-        <div
-  className="bg-card p-8 rounded-lg shadow-xs"
-  onSubmit={handleSubmit}
->
-  <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+        <div className="bg-card p-8 rounded-lg shadow-xs">
+          <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-  <form className="space-y-6">
-    <div>
-      <label
-        htmlFor="name"
-        className="block text-sm font-medium mb-2"
-      >
-        Your Name
-      </label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        autoComplete="name"   // ✅ added
-        className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-        placeholder="Your name..."
-      />
-    </div>
+          <form className="space-y-6" onSubmit={onSubmit}>
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium mb-2"
+              >
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                autoComplete="name"
+                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Your name..."
+              />
+            </div>
 
-    <div>
-      <label
-        htmlFor="email"
-        className="block text-sm font-medium mb-2"
-      >
-        Your Email
-      </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        autoComplete="email"   // ✅ added
-        className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-        placeholder="your@email.com"
-      />
-    </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium mb-2"
+              >
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autoComplete="email"
+                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="your@email.com"
+              />
+            </div>
 
-    <div>
-      <label
-        htmlFor="message"
-        className="block text-sm font-medium mb-2"
-      >
-        Your Message
-      </label>
-      <textarea
-        id="message"
-        name="message"
-        required
-        autoComplete="off"   // ✅ not needed for messages, so we turn it off
-        className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
-        placeholder="Hello, I'd like to talk about..."
-      />
-    </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium mb-2"
+              >
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                autoComplete="off"
+                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                placeholder="Hello, I'd like to talk about..."
+              />
+            </div>
 
-    <button
-      type="submit"
-      disabled={isSubmitting}
-      className={cn(
-        "cosmic-button w-full flex items-center justify-center gap-2"
-      )}
-    >
-      {isSubmitting ? "Sending..." : "Send Message"}
-      <Send size={16} />
-    </button>
-  </form>
-</div>
+            <button
+              type="submit"
+              className={cn(
+                "cosmic-button w-full flex items-center justify-center gap-2"
+              )}
+            >
+              Send Message
+              <Send size={16} />
+            </button>
+          </form>
+          <span>{result}</span>
+        </div>
 
         </div>
       </div>

@@ -2,7 +2,7 @@ import { Code, Database, Linkedin, Instagram, Github } from "lucide-react";
 
 export default function AboutMe() {
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="about" className="py-24 px-4 relative animate-fade-slide-up-clean">
       <div className="container mx-auto max-w-5xl">
 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-slide-up-clean">
   About <span className="text-primary"> Me</span>
@@ -27,7 +27,7 @@ export default function AboutMe() {
 
             <div className="flex gap-4 pt-4 justify-center">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/diya-ghosh030508" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
@@ -35,7 +35,7 @@ export default function AboutMe() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/diyaghosh0305?igsh=MXQxOXN0aXdrbWF0MA==&utm_source=ig_contact_invite " 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
@@ -43,7 +43,7 @@ export default function AboutMe() {
                 <Instagram className="h-6 w-6" />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/Diya030805" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"

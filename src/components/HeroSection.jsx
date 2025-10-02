@@ -19,7 +19,7 @@ export default function HeroSection() {
     </h1>
 
     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4 animate-fade-in">
-      I am passionate about front-end development and enjoy crafting amazing web experiences while learning modern technologies, building interfaces that are both beautiful and functional.
+      I am passionate about <span className="text-primary">Front-end development</span> and enjoy crafting amazing web experiences while learning modern technologies, building interfaces that are both beautiful and functional.
     </p>
   </div>
 </div>
