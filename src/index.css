@@ -2,7 +2,9 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
   --color-border: hsl(var(--border));
