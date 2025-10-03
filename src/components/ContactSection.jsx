@@ -61,12 +61,13 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-medium"> Email</h4>
-                  <a
-                    href="diyaghosh030805@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    diyaghosh030805@gmail.com
-                  </a>
+              <a
+  href="mailto:diyaghosh030805@gmail.com"
+  className="text-muted-foreground hover:text-primary transition-colors"
+>
+  diyaghosh030805@gmail.com
+</a>
+
                 </div>
               </div>
               <div className="flex items-start space-x-4">
