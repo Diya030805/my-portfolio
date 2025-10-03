@@ -15,7 +15,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // change here
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,7 +27,7 @@ export default function Navbar() {
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
         isScrolled
-          ? "py-3 bg-background/80 backdrop-blur-md shadow-lg" // shadow effect when scrolled >50
+          ? "py-3 bg-background/80 backdrop-blur-md shadow-lg"
           : "py-5"
       )}
     >
@@ -37,11 +37,11 @@ export default function Navbar() {
           href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">Diya</span> Portfolio
+            <span className="text-foreground">Diya</span> Portfolio
           </span>
         </a>
 
-        {/* desktop nav */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -54,7 +54,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* mobile nav */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-50"
@@ -63,6 +63,7 @@ export default function Navbar() {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
+        {/* Mobile Menu */}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
@@ -88,4 +89,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-};
+}

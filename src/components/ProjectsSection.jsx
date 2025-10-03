@@ -4,7 +4,7 @@ const projects = [
     title: "Hotel Booking Platform",
     description:
       "A seamless hotel booking platform where users can search hotels, check availability, and book rooms with secure payments.",
-    image: "/projects/HotelBooking.png",
+    image: "projects/HotelBooking.png",
     tags: ["HTML", "React.js", "Tailwind CSS"],
   },
   {
@@ -12,7 +12,7 @@ const projects = [
     title: "Restaurant Website",
     description:
       "An elegant restaurant website with digital menu, online table booking, and customer-friendly UI for food lovers.",
-    image: "/projects/Restraunt.png",
+    image: "projects/Restraunt.png",
     tags: ["HTML", "React.js", "Tailwind CSS"],
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     title: "CookMate Recipe Finder",
     description:
       "An interactive recipe finder app where users can explore dishes, search by ingredients, and save their favorite recipes.",
-    image: "/projects/CookMate.png",
+    image: "projects/CookMate.png",
     tags: ["HTML", "React.js", "Tailwind CSS"],
   },
 ];

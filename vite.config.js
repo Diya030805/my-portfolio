@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export default defineConfig({
+  base: '/my-portfolio/', // Add this line to set base path for GitHub Pages
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
