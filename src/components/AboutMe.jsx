@@ -30,25 +30,28 @@ export default function AboutMe() {
                 href="https://www.linkedin.com/in/diya-ghosh030508" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                className="group relative p-3 rounded-full border-2 border-primary/50 text-primary hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 overflow-hidden"
               >
-                <Linkedin className="h-6 w-6" />
+                <div className="absolute inset-0 bg-primary transform scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
+                <Linkedin className="h-6 w-6 relative z-10 group-hover:text-white transition-colors duration-300" />
               </a>
               <a 
                 href="https://www.instagram.com/diyaghosh0305?igsh=MXQxOXN0aXdrbWF0MA==&utm_source=ig_contact_invite " 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                className="group relative p-3 rounded-full border-2 border-primary/50 text-primary hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 overflow-hidden"
               >
-                <Instagram className="h-6 w-6" />
+                <div className="absolute inset-0 bg-primary transform scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
+                <Instagram className="h-6 w-6 relative z-10 group-hover:text-white transition-colors duration-300" />
               </a>
               <a 
                 href="https://github.com/Diya030805" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                className="group relative p-3 rounded-full border-2 border-primary/50 text-primary hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 overflow-hidden"
               >
-                <Github className="h-6 w-6" />
+                <div className="absolute inset-0 bg-primary transform scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
+                <Github className="h-6 w-6 relative z-10 group-hover:text-white transition-colors duration-300" />
               </a>
             </div>
           </div>
